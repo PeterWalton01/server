@@ -1,0 +1,14 @@
+POST http://localhost:3000/api/1.0/auth
+content-type: application/json
+
+{
+    "email": "user1@mail.com",
+    "password": "P4ssword"
+}
+
+###
+
+GET http://localhost:3000/api/1.0/users
+Authorization: Bearer dabadc25c90d7adc4d9bb332d3ef68ac
+
+###

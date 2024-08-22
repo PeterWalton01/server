@@ -1,0 +1,18 @@
+POST http://localhost:3000/api/1.0/users
+content-type: application/json
+
+{
+    "username": "user1",
+    "email": "user1@mail.com",
+    "password": "P4ssword"
+}
+
+###
+
+GET http://localhost:3000/api/1.0/users/1
+
+###
+
+GET http://localhost:3000/api/1.0/users
+
+###

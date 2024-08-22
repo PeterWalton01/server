@@ -1,0 +1,55 @@
+{
+  "name": "express-ws",
+  "version": "1.0.0",
+  "description": "TDD with express",
+  "main": "index.js",
+  "scripts": {
+    "start:dev": "cross-env NODE_ENV=development npm run migrate && cross-env NODE_ENV=development nodemon index",
+    "start": "cross-env NODE_ENV=production npm run migrate && cross-env NODE_ENV=production node index",
+    "test": "cross-env NODE_ENV=test jest --watch --verbose && cross-env NODE_ENV=test node test-cleanup",
+    "lint": "eslint .",
+    "test:staging": "cross-env NODE_ENV=staging npm run migrate &&  cross-env NODE_ENV=staging jest -all . --maxWorkers=1 && cross-env NODE_ENV=staging node test-cleanup",
+    "migrate": "sequelize-cli db:migrate"
+  },
+  "author": "Peter Walton",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "config": "^3.3.12",
+    "express": "^4.19.2",
+    "express-validator": "^7.1.0",
+    "file-type": "^19.4.1",
+    "file-type-cjs": "^1.0.7",
+    "i18next": "^23.12.2",
+    "i18next-fs-backend": "^2.3.1",
+    "i18next-http-middleware": "^3.6.0",
+    "jsonwebtoken": "^9.0.2",
+    "nodemailer": "^6.9.14",
+    "nodemailer-stub": "^1.2.2",
+    "sequelize": "^6.37.3",
+    "sequelize-cli": "^6.6.2",
+    "sqlite3": "^5.1.7",
+    "winston": "^3.14.2"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.7.0",
+    "cross-env": "^7.0.3",
+    "eslint": "^9.7.0",
+    "globals": "^15.8.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.4",
+    "prettier": "^3.3.3",
+    "smtp-server": "^3.13.4",
+    "supertest": "^7.0.0"
+  },
+  "prettier": {
+    "singleQuote": true
+  },
+  "jest": {
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules",
+      "<rootDir>/config"
+    ]
+  }
+}
